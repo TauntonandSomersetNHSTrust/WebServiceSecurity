@@ -27,7 +27,7 @@ Checklist of things to consider and implement to protect your exposed web servic
 
 ### OAuth Services/Servers
 
--   [ ] Use a already tested and developed solution such as Keycloak
+-   [ ] Use an already tested and developed solution such as [Keycloak](https://www.keycloak.org/)
 -   [ ] Validate `redirect_uri` to allow whitelisted URLs
 -   [ ] Validate Web-Origins to allow whitelisted URLs
 -   [ ] Consider Authorisation code instead of exposing tokens
@@ -55,19 +55,19 @@ Checklist of things to consider and implement to protect your exposed web servic
 
 ## Output
 
--   [ ] Send `X-Content-Type-Options: nosniff` header
+-   [ ] Send `X-Content-Type-Options: nosniff` header to enabled cross-origin read blocking 
 -   [ ] Send `X-Frame-Options: deny` header to prevent [clickjacking attacks](https://en.wikipedia.org/wiki/Clickjacking)
 -   [ ] Send `Content-Security-Policy: default-src 'none'` header to prevent [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting)
 -   [ ] Send `X-Download-Options: 'noopen'` header to negate attacks that old versions of [Internet Explorer are vulnerable to](https://docs.microsoft.com/en-gb/archive/blogs/ie/ie8-security-part-v-comprehensive-protection#mime-handling-force-save)
--   [ ] Remove server identify headers - `X-Powered-By`, `Server`, `X-AspNet-Version`, etc.
+-   [ ] Remove headers that identify what web framework the server is using - `X-Powered-By`, `Server`, `X-AspNet-Version`, etc.
 -   [ ] Force `content-type` for your response. e.g. set `content-type` to `application/json` if that’s what the content is
 -   [ ] Return the proper status code according to the operation completed; `200 OK`, `401 Unauthorized`, `405 Method Not Allowed`, etc.
 
 ## Logging
 
--   [ ] Log Success and Failures, the damage is in the successful execution!
--   [ ] Halt processing if Audit/Logging fails
--   [ ] User high performing logging solution such as Logstash & Elasticsearch
+-   [ ] Log success and failures, the damage is in the successful execution!
+-   [ ] Halt processing if audit/logging fails
+-   [ ] User high performing logging solution such as [Logstash](https://www.elastic.co/logstash) & [Elasticsearch](https://www.elastic.co/)
 
 ## Infrastructure
 
@@ -75,7 +75,7 @@ Checklist of things to consider and implement to protect your exposed web servic
 -   [ ] User network base IPS system
 -   [ ] Load test to understand your bottle necks and capabilities
 -   [ ] Expose only what is require to public networks, consider Gateway services to secure insecure backend services
--   [ ] User Anti-Virus and Anti malware
+-   [ ] User anti-virus and anti-malware protection
 
 ## Development Process
 

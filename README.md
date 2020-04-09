@@ -6,7 +6,7 @@ Checklist of things to consider and implement to protect your exposed web servic
 
 -   [ ] Use HTTPS using Certificate from Trusted CA for Client access
 -   [ ] Rate Limit requests based on client finger printing, API key, or IP
--   [ ] Use `HSTS` header with SSL to avoid SSL Strip attack.
+-   [ ] Use `HSTS` header with SSL to avoid SSL Strip attack
 -   [ ] Use encryption on all transport between client and other backend services
 
 ## Authentication
@@ -28,11 +28,11 @@ Checklist of things to consider and implement to protect your exposed web servic
 ### OAuth Services/Servers
 
 -   [ ] Use a already tested and developed solution such as Keycloak
--   [ ] Validate `redirect_uri` to allow whitelisted URLs.
--   [ ] Validate Web-Origins to allow whitelisted URLs.
--   [ ] Consider Authorisation code instead of exposing tokens.
--   [ ] Use `state` with a random hash to prevent CSRF during authentication process.
--   [ ] Define the default scope, and validate scope parameters for each application.
+-   [ ] Validate `redirect_uri` to allow whitelisted URLs
+-   [ ] Validate Web-Origins to allow whitelisted URLs
+-   [ ] Consider Authorisation code instead of exposing tokens
+-   [ ] Use `state` with a random hash to prevent CSRF during authentication process
+-   [ ] Define the default scope, and validate scope parameters for each application
 
 ## Input
 
@@ -40,26 +40,26 @@ Checklist of things to consider and implement to protect your exposed web servic
 -   [ ] Sanitise all input validating type, length and content to avoid common vulnerabilities; `XSS`, `SQL-Injection`, etc.)
 -   [ ] Use the proper HTTP method according to the operation: `GET`, `POST`, `PUT/PATCH`, `DELETE`
 -   [ ] Validate `content-type` on request Accept header (Content Negotiation) to allow only your supported format; `application/json`, etc.)
--   [ ] Validate `content-type` of posted data as you accept; `application/x-www-form-urlencoded`, `application/json`, etc.).
--   [ ] Sensitive data must not be contained in URL.
--   [ ] Consider obfuscation of URL strings.
+-   [ ] Validate `content-type` of posted data as you accept; `application/x-www-form-urlencoded`, `application/json`, etc.)
+-   [ ] Sensitive data must not be contained in URL
+-   [ ] Consider obfuscation of URL strings
 -   [ ] Consider API Gateway services to enable caching, Rate Limit policies
 
 ## Processing
 
 -   [ ] Server to communication must validate sessions and/or tokens
 -   [ ] Use UUID instead of incremental IDs
--   [ ] If you are parsing XML files, make sure entity parsing is not enabled to avoid `XXE` (XML external entity attack).
--   [ ] If you are parsing XML files, make sure entity expansion is not enabled to avoid `Billion Laughs/XML bomb` via exponential entity expansion attack.
+-   [ ] If you are parsing XML files, make sure entity parsing is not enabled to avoid `XXE` (XML external entity attack)
+-   [ ] If you are parsing XML files, make sure entity expansion is not enabled to avoid `Billion Laughs/XML bomb` via exponential entity expansion attack
 -   [ ] Use a CDN/Object Storage for file uploads, and do not not allow upload to the API service/server
 
 ## Output
 
--   [ ] Send `X-Content-Type-Options: nosniff` header.
--   [ ] Send `X-Frame-Options: deny` header.
--   [ ] Send `Content-Security-Policy: default-src 'none'` header.
+-   [ ] Send `X-Content-Type-Options: nosniff` header
+-   [ ] Send `X-Frame-Options: deny` header
+-   [ ] Send `Content-Security-Policy: default-src 'none'` header
 -   [ ] Remove server identify headers - `X-Powered-By`, `Server`, `X-AspNet-Version`, etc.
--   [ ] Force `content-type` for your response. e.g. set `content-type` to `application/json` if that’s what the content is.
+-   [ ] Force `content-type` for your response. e.g. set `content-type` to `application/json` if that’s what the content is
 -   [ ] Return the proper status code according to the operation completed; `200 OK`, `401 Unauthorized`, `405 Method Not Allowed`, etc.
 
 ## Logging
@@ -70,7 +70,7 @@ Checklist of things to consider and implement to protect your exposed web servic
 
 ## Infrastructure
 
--   [ ] Avoid HTTP Blocking by using workers, queues and a scale out infrastructure.
+-   [ ] Avoid HTTP Blocking by using workers, queues and a scale out infrastructure
 -   [ ] User network base IPS system
 -   [ ] Load test to understand your bottle necks and capabilities
 -   [ ] Expose only what is require to public networks, consider Gateway services to secure insecure backend services

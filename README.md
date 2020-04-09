@@ -17,7 +17,7 @@ Checklist of things to consider and implement to protect your exposed web servic
 ### JSON Web Token (JWT)
 
 -   [ ] Use a randomly generated long key also referred to as the `JWT Secret`
--   [ ] Don't extract the algorithm from the header. Algorithm should be known, forced and strong such as `HS256` or `RS256`)
+-   [ ] Don't extract the algorithm from the header. Algorithm should be known, forced and strong such as `HS256` or `RS256`
 -   [ ] Every request should contain the token and token must be validated every time
 -   [ ] Token validation must be synchronous and fail by default
 -   [ ] Token validation must check expiry and signature
@@ -37,10 +37,10 @@ Checklist of things to consider and implement to protect your exposed web servic
 ## Input
 
 -   [ ] Do not allow payloads bigger than expect
--   [ ] Sanitise all input validating type, length and content to avoid common vulnerabilities; `XSS`, `SQL-Injection`, etc.)
+-   [ ] Sanitise all input validating type, length and content to avoid common vulnerabilities; `XSS`, `SQL-Injection`, etc.
 -   [ ] Use the proper HTTP method according to the operation: `GET`, `POST`, `PUT/PATCH`, `DELETE`
--   [ ] Validate `content-type` on request Accept header (Content Negotiation) to allow only your supported format; `application/json`, etc.)
--   [ ] Validate `content-type` of posted data as you accept; `application/x-www-form-urlencoded`, `application/json`, etc.)
+-   [ ] Validate `content-type` on request Accept header (Content Negotiation) to allow only your supported format; `application/json`, etc.
+-   [ ] Validate `content-type` of posted data as you accept; `application/x-www-form-urlencoded`, `application/json`, etc.
 -   [ ] Sensitive data must not be contained in URL
 -   [ ] Consider obfuscation of URL strings
 -   [ ] Consider API Gateway services to enable caching, Rate Limit policies

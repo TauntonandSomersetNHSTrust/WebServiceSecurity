@@ -56,8 +56,9 @@ Checklist of things to consider and implement to protect your exposed web servic
 ## Output
 
 -   [ ] Send `X-Content-Type-Options: nosniff` header
--   [ ] Send `X-Frame-Options: deny` header
--   [ ] Send `Content-Security-Policy: default-src 'none'` header
+-   [ ] Send `X-Frame-Options: deny` header to prevent [clickjacking attacks](https://en.wikipedia.org/wiki/Clickjacking)
+-   [ ] Send `Content-Security-Policy: default-src 'none'` header to prevent [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting)
+-   [ ] Send `X-Download-Options: 'noopen'` header to negate attacks that old versions of [Internet Explorer are vulnerable to](https://docs.microsoft.com/en-gb/archive/blogs/ie/ie8-security-part-v-comprehensive-protection#mime-handling-force-save)
 -   [ ] Remove server identify headers - `X-Powered-By`, `Server`, `X-AspNet-Version`, etc.
 -   [ ] Force `content-type` for your response. e.g. set `content-type` to `application/json` if that’s what the content is
 -   [ ] Return the proper status code according to the operation completed; `200 OK`, `401 Unauthorized`, `405 Method Not Allowed`, etc.
